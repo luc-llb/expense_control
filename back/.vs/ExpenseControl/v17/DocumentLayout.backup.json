@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\saved\\teste\\repositorio\\expense_control\\back\\ExpenseControl\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A22FF71D-2B9B-013F-12B6-AB893498C788}|ExpenseControl.csproj|c:\\saved\\teste\\repositorio\\expense_control\\back\\expensecontrol\\expensecontrol\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A22FF71D-2B9B-013F-12B6-AB893498C788}|ExpenseControl.csproj|solutionrelative:expensecontrol\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\saved\\teste\\repositorio\\expense_control\\back\\ExpenseControl\\ExpenseControl\\Program.cs",
+              "RelativeDocumentMoniker": "ExpenseControl\\Program.cs",
+              "ToolTip": "C:\\saved\\teste\\repositorio\\expense_control\\back\\ExpenseControl\\ExpenseControl\\Program.cs",
+              "RelativeToolTip": "ExpenseControl\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T06:22:50.944Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
