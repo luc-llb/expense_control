@@ -1,0 +1,34 @@
+# Pastas e arquivos do Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Pastas e arquivos de build do .NET
+ExpenseControl/
+obj/
+debug/
+release/
+*.log
+*.cache
+*.pdb
+
+# Configurações de usuário e ambiente
+*.vscode/
+*.swp
+*.sln.ide
+
+# Configurações locais e temporárias
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.json
+secrets.json
+.env
+
+# Logs e arquivos temporários
+*.log
+logs/
+temp/
+*.tmp
+*.bak

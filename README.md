@@ -31,7 +31,7 @@ expense_control
 ```
 
 ## 🖥 API
-Para o desenvolvimento da API foi utilizado o framework **ASP.NET** em **C#** no ambiente do *Visual Studio 2022*.
+Para o desenvolvimento da API foi utilizado o framework **ASP.NET** em **C#** no ambiente do *Visual Studio 2022* com o **.NET 8**.
 
 ### Principais Funcionalidades
 - Requisições GET, POST, PUT e DELETE para pessoas utilizando as rotas `/api/persons` e `/api/persons/:id`.
