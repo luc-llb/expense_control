@@ -21,7 +21,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("VarcelCors", policy =>
     {
-        policy.WithOrigins("https://expense-control-view.vercel.app") // <- Removido a barra final, que pode causar erro
+        policy.WithOrigins("https://expense-control-view.vercel.app",
+            "https://expense-control-view-lucas-projects-3b3c1bc5.vercel.app/")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
