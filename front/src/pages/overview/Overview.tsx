@@ -17,7 +17,7 @@ export default function Overview() {
     // Pega os dados da API ao carregar a página
     useEffect(() => {
         async function request(): Promise<void> {
-            const response = await fetch("http://localhost:5042/api/consultations");
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/consultations`);
             const data = await response.json();
             setConsults(data);
         }

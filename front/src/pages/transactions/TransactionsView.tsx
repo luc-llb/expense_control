@@ -18,7 +18,7 @@ export default function TransactionsView() {
     const [transactions, setTransactions] = useState<Transaction[]>([]);
     useEffect(() => {
         async function request(): Promise<void> {
-            const response = await fetch("http://localhost:5042/api/transactions");
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/transactions`);
             const data = await response.json();
             console.log(data);
             setTransactions(data);
@@ -31,14 +31,14 @@ export default function TransactionsView() {
     const [search, setSearch] = useState<string>("");
     const handleSearch = async () => {
         // Consumindo a api de pessoas para buscar o id da pessoa
-        const response = await fetch("http://localhost:5042/api/persons"+(search ? `?filterName=${search}` : ""));
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/persons`+(search ? `?filterName=${search}` : ""));
         const data: Person[] = await response.json();
         if(data.length === 0) {
             alert("Nenhuma transação encontrada");
             return;
         }
         // Consumindo a api de transações para buscar as transações da pessoa
-        const responseTransactions = await fetch("http://localhost:5042/api/transactions"+(search ? `?personFilter=${data[0].id}` : ""));
+        const responseTransactions = await fetch(`${import.meta.env.REACT_APP_API_URL}/transactions`+(search ? `?personFilter=${data[0].id}` : ""));
         const dataTransactions: Transaction[] = await responseTransactions.json();
         setTransactions(dataTransactions);
     }
