@@ -27,6 +27,10 @@ export default function AddTransaction({update}: {update: () => void}) {
 
     // Função para abrir o popup
     const openPopup = () => {
+        if (!persons || persons.length === 0) {
+            alert("Por favor, adicione uma pessoa antes de adicionar uma transação.");
+            return;
+        }
         setNewTransaction(new Transaction(0, "", 0, 1, 0));
         setIsPopupOpen(true);
     };
