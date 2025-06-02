@@ -18,7 +18,7 @@ export default function AddTransaction({update}: {update: () => void}) {
     // Obtem a lista de pessoas atualizada
     useEffect(() => {
         const request = async () => {
-            const response = await fetch("http://localhost:5042/api/persons");
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/persons`);
             const data = await response.json();
             setPersons(data);
         }
@@ -40,7 +40,7 @@ export default function AddTransaction({update}: {update: () => void}) {
                 type: newTransaction!.type,
                 personId: newTransaction!.personId
             };
-            const response = await fetch("http://localhost:5042/api/transactions", {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/transactions`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

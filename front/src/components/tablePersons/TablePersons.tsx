@@ -32,7 +32,7 @@ export default function TablePersons({persons, update}: {persons: Person[], upda
             name: person.name,
             age: person.age
         }
-        const responce = await fetch("http://localhost:5042/api/persons/"+person.id.toString(),
+        const responce = await fetch(`${import.meta.env.VITE_API_URL}/persons`+person.id.toString(),
             {
                 method: "PUT",
                 headers: {
@@ -51,7 +51,7 @@ export default function TablePersons({persons, update}: {persons: Person[], upda
     }
 
     async function deletePerson(id: number) {
-        const responce = await fetch("http://localhost:5042/api/persons/"+id.toString(), {method: "DELETE"});
+        const responce = await fetch(`${import.meta.env.VITE_API_URL}/persons`+id.toString(), {method: "DELETE"});
         if(responce.status == 204){
             update(); // atualiza a lista realizando uma busca
             setIsDeletOpen(false);
