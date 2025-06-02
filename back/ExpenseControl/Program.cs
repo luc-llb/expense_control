@@ -22,7 +22,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("VarcelCors", policy =>
     {
         policy.WithOrigins("https://expense-control-view.vercel.app",
-            "https://expense-control-view-lucas-projects-3b3c1bc5.vercel.app/")
+            "https://expense-control-view-obc3o7m9h-lucas-projects-3b3c1bc5.vercel.app")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
