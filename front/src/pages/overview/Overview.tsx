@@ -12,7 +12,7 @@ import { Consultation } from "../../models/Consultation";
  */
 export default function Overview() {
     const navigate = useNavigate();
-    const [consults, setConsults] = useState<Consultation[] | null>([]);
+    const [consults, setConsults] = useState<Consultation[]>([]);
 
     // Pega os dados da API ao carregar a página
     useEffect(() => {
