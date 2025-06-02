@@ -29,7 +29,7 @@ export default function TableTransactions({transactions}: {transactions: Transac
     const [transactionsWithNames, setTransactionsWithNames] = useState<TransactionNamed[] | null>([]);
     useEffect(() => {
         async function request(): Promise<void> {
-            const response = await fetch("http://localhost:5042/api/persons");
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/persons`);
             const data: Person[] = await response.json();
             const transactionsNamed = transactions.map((transaction) => {
                 const person = data.find((person) => person.id === transaction.personId);

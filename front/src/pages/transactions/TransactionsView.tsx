@@ -38,7 +38,7 @@ export default function TransactionsView() {
             return;
         }
         // Consumindo a api de transações para buscar as transações da pessoa
-        const responseTransactions = await fetch(`${import.meta.env.REACT_APP_API_URL}/transactions`+(search ? `?personFilter=${data[0].id}` : ""));
+        const responseTransactions = await fetch(`${import.meta.env.VITE_API_URL}/transactions`+(search ? `?personFilter=${data[0].id}` : ""));
         const dataTransactions: Transaction[] = await responseTransactions.json();
         setTransactions(dataTransactions);
     }
