@@ -19,12 +19,13 @@ builder.Services.AddSwaggerGen();
 // Corrige erro: AddDefaultPolicy não aceita nome. Use AddPolicy para nomear a política
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("VarcelCors", policy =>
+    options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("https://expense-control-view.vercel.app",
-            "https://expense-control-view-obc3o7m9h-lucas-projects-3b3c1bc5.vercel.app")
-              .AllowAnyHeader()
-              .AllowAnyMethod();
+        policy
+            .SetIsOriginAllowed(origin =>
+                origin.StartsWith("https://expense-control-view") && origin.EndsWith(".vercel.app"))
+            .AllowAnyHeader()
+            .AllowAnyMethod();
     });
 });
 // --------------------------------------------------------------
@@ -42,10 +43,8 @@ if (app.Environment.IsDevelopment())
 // Middleware de redirecionamento HTTPS
 app.UseHttpsRedirection();
 
-// Habilita CORS (precisa estar antes do MapControllers)
-app.UseCors("VarcelCors");
+app.UseCors();
 
-// Autorização (pode ser ignorado se não estiver usando autenticação)
 app.UseAuthorization();
 
 // Mapeia os controladores da API
