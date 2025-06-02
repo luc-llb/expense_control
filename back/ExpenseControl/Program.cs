@@ -14,12 +14,12 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll",
+    options.AddDefaultPolicy(
         policy =>
         {
-            policy.AllowAnyOrigin()   // Permite qualquer origem (AJUSTE EM PRODUÇÃO!)
-                  .AllowAnyMethod()   // Permite qualquer método (GET, POST, PUT, DELETE)
-                  .AllowAnyHeader();  // Permite qualquer cabeçalho
+            policy.WithOrigins("https://expense-control-view.vercel.app/") // Permite uma origem especÃ­fica
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
         });
 });
 
