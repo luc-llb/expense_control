@@ -5,6 +5,14 @@ geradas para cada pessoa cadastrada.
 
 A `/front` possui a implementação da interface de web em **React**, enquanto a pasta `/back` possui a implementação da API em **C#**.
 
+### Atualização
+Essa aplicação agora está em produção. O Front-end foi hospedado na plataforma [Vercel](https://vercel.com/), enquanto a API está hospedada no [Render](https://render.com/).
+
+Acesse o seguinte link para testa-la
+👉 https://expense-control-view.vercel.app/
+
+---
+
 ## Estrutura do diretório
 
 ```
@@ -29,6 +37,8 @@ expense_control
                 |-- App.tsx /*Arquivo de definição das rotas*/
         /*outras pastas e arquivos do projeto*/
 ```
+
+---
 
 ## 🖥 API
 Para o desenvolvimento da API foi utilizado o framework **ASP.NET** em **C#** no ambiente do *Visual Studio 2022* com o **.NET 8**.
@@ -58,6 +68,8 @@ dotnet run
 ```
 
 Caso opte por utilizar o Visual Studio, será aberto o navegador na página do Swagger.
+
+---
 
 ## 💻 Interface Web
 Para o desenvolvimento da interface web foi utilizado o **React**+**Typescript** e **Tailwind.css**, usando o *vite* no ambiente do *VS Code*.
