@@ -7,8 +7,7 @@ A `/front` possui a implementação da interface de web em **React**, enquanto a
 
 ### Atualização
 Essa aplicação agora está em produção. O Front-end foi hospedado na plataforma [Vercel](https://vercel.com/), enquanto a API está hospedada no [Render](https://render.com/).
-
-Acesse o seguinte link para testa-la
+ 
 👉 https://expense-control-view.vercel.app/
 
 ---
