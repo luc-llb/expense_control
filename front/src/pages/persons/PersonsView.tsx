@@ -17,7 +17,7 @@ export default function PersonsView() {
     
     // Realiza a chamada da API de pessoas, podendo incluir um filtro de nome
     const handleSearch = async () => {
-        const responce = await fetch("http://localhost:5042/api/persons"+(search ? `?filterName=${search}` : ""))
+        const responce = await fetch(`${import.meta.env.VITE_API_URL}/persons`+(search ? `?filterName=${search}` : ""))
         const data = await responce.json();
         setPersons(data);
     }
@@ -32,7 +32,7 @@ export default function PersonsView() {
     // Função para adicionar uma pessoa
     const addPerson = async (person: Person) => {
         const dtoPerson = { name: person.name, age:person.age};
-        const responce = await fetch("http://localhost:5042/api/persons", 
+        const responce = await fetch(`${import.meta.env.VITE_API_URL}/persons`, 
             {
                 method: "POST",
                 headers: {

@@ -18,7 +18,7 @@ export default function AddTransaction({update}: {update: () => void}) {
     // Obtem a lista de pessoas atualizada
     useEffect(() => {
         const request = async () => {
-            const response = await fetch("http://localhost:5042/api/persons");
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/persons`);
             const data = await response.json();
             setPersons(data);
         }
@@ -27,6 +27,10 @@ export default function AddTransaction({update}: {update: () => void}) {
 
     // Função para abrir o popup
     const openPopup = () => {
+        if (!persons || persons.length === 0) {
+            alert("Por favor, adicione uma pessoa antes de adicionar uma transação.");
+            return;
+        }
         setNewTransaction(new Transaction(0, "", 0, 1, 0));
         setIsPopupOpen(true);
     };
@@ -40,7 +44,7 @@ export default function AddTransaction({update}: {update: () => void}) {
                 type: newTransaction!.type,
                 personId: newTransaction!.personId
             };
-            const response = await fetch("http://localhost:5042/api/transactions", {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/transactions`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -62,7 +66,12 @@ export default function AddTransaction({update}: {update: () => void}) {
     // Função para corrigir e travar o seletor de tipo transação quando a pessoa possui menos de 18 anos
     const checkAge = ()=>{
         const currentPerson = persons.find(p => p.id === newTransaction!.personId);
-        if (currentPerson?.age < 18) {
+
+        if (!currentPerson) {
+            return false; // Se não houver pessoa selecionada, mantém o seletor ativo
+        }
+
+        if (currentPerson!.age < 18) {
             if (newTransaction!.type !== 2) {
                 setNewTransaction({ ...newTransaction!, type: 2 });
             }
