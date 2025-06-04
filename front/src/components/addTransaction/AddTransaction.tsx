@@ -65,6 +65,9 @@ export default function AddTransaction({update}: {update: () => void}) {
 
     // Função para corrigir e travar o seletor de tipo transação quando a pessoa possui menos de 18 anos
     const checkAge = ()=>{
+        if(!persons || persons.length === 0 || !newTransaction) {
+            return false;
+        }
         const currentPerson = persons.find(p => p.id === newTransaction!.personId);
         if (currentPerson!.age < 18) {
             if (newTransaction!.type !== 2) {
